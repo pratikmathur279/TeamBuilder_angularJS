@@ -1,0 +1,16 @@
+<ul dnd-list="list">
+   
+    <li ng-repeat="item in list">
+    
+        <div class="inactive" ng-if="item.playerstatus == 'INACTIVE'" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}" dnd-effect-allowed="move" > 
+         {{item.first}} {{item.last}} - {{item.playerstatus}} 
+        </div>
+        
+        <div
+        ng-if="item.playerstatus != 'INACTIVE'" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}" dnd-effect-allowed="move" > 
+         {{item.first}} {{item.last}} - {{item.playerstatus}} 
+        </div>
+        
+    </li>
+    
+</ul>
